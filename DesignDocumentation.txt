@@ -1,0 +1,24 @@
+How your design allows for both scalability and extendibility:
+1. The inheritance hierarchy of piece --> tile --> board --> boardgame could be 
+  extended to create other board games
+2. The design of the player and team class both allow for multiplayer games of more 
+  than two players possible
+3. The InputHandler class allows to different input mechanisms to be incorporated
+4. Dynamic sizing of Player[] team, and Team[] teams allows for more players and 
+  teams to be added then it was predetermined => flexibility
+5. The use of Constants.java to manager public static constants allow me to avoid
+  using magic numbers and allow for easier modifications
+6. Allow the user to add more players and add more teams during the game selection
+  interface
+
+Any changes from past assignments (for future assignments)
+1. Changed the constructor of Sliding Puzzle Board and Game to take in an additional
+  parameter of player, which contributes to better player data logics and helps
+  to write toString methods
+2. Instead of having InputHandler with methods that are public static, to provide
+  better encapsulation, its methods are made to be instance-based, and an object
+  of it is instantiated and is passed around to the few methods that need it
+3. The Value field of the Piece class is rewritten to be of type String instead of 
+  type int for more generality
+4. Moved methods isValueInbound and findTileByValue into the superclass Board.java,
+  which is generalized to be used by other Boards 
